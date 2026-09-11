@@ -8,7 +8,7 @@ body {
 h1 {
     text-align: center;
     font-weight: 900;
-    font-size: 50px;
+    font-size: clamp(28px, 8vw, 50px);
     position: absolute;
     z-index: 10;
     top: 15px;
@@ -18,7 +18,7 @@ h1 {
 }
 
 .h-wrapper p {
-    font-size: 10px;
+    font-size: clamp(5px, 2vw, 10px);
     color: rgb(75, 75, 75);
     position: absolute;
     z-index: 10;
