@@ -120,6 +120,7 @@ div h2 {
 }
 
 a {
+    color: rgb(75, 75, 75);
     text-decoration-color: rgb(75, 75, 75);
     text-decoration-thickness: 1px;
 }
