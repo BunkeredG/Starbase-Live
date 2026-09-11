@@ -57,8 +57,11 @@ pre {
     font-family: 'Inter';
     font-weight: 400;
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding-left: 1em;
 }
 
 .h-wrapper {
@@ -85,7 +88,7 @@ pre {
 
 div {
     margin-top: 20px;
-    padding: 0 20px; 
+    padding: 0 20px;
 }
 
 div h2 {
@@ -114,11 +117,6 @@ div h2 {
 a {
     text-decoration-color: rgb(75, 75, 75);
     text-decoration-thickness: 1px;
-}
-
-div pre {
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 .complete {
