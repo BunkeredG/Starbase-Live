@@ -13,10 +13,10 @@ body {
 h1 {
     text-align: center;
     font-weight: 900;
-    font-size: clamp(28px, 8vw, 50px);
+    font-size: clamp(28px, 8vw, 70px);
     position: absolute;
     z-index: 10;
-    top: 15px;
+    top: 5px;
     left: 0px;
     right: 0px;
     margin: 0;
@@ -51,10 +51,23 @@ summary {
     font-weight: 600;
     font-size: 25px;
     color: #994cde;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 summary:hover {
     color: #b974f5;
+    transition: 0.1s;
+}
+
+.ship-hover:hover {
+    color: #f8a745;
+    transition: 0.1s;
+}
+
+.booster-hover:hover {
+    color: #2b8ef1;
     transition: 0.1s;
 }
 
@@ -91,13 +104,17 @@ pre {
     display: block;
 }
 
-div {
+.firstdiv {
     margin-top: 20px;
+}
+
+div {
+    margin-top: 40px;
     padding: 0 20px;
 }
 
 div h2 {
-    margin-top: 0;
+    margin-top: 15px;
     margin-bottom: 0;
 }
 
@@ -120,9 +137,14 @@ div h2 {
 }
 
 a {
+    color: lightgray;
+    text-decoration-color: lightgray;
+    text-decoration-thickness: 1px;
+}
+
+.a-source {
     color: rgb(75, 75, 75);
     text-decoration-color: rgb(75, 75, 75);
-    text-decoration-thickness: 1px;
 }
 
 .complete {
@@ -135,4 +157,9 @@ a {
 
 .incomplete {
     color: lightcoral
+}
+
+.uncertain {
+    color: rgb(235, 188, 18);
+    font-style: italic;
 }

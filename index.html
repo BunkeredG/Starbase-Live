@@ -11,28 +11,38 @@
 <div class="h-wrapper">
     <img src="img/masseys-prod pad-prod.png" class="headerimg">
     <h1>Starbase</h1>
-    <p>All times in Central Time <br> Last updated at 17:50</p>
+    <p>All times in Central Time <br> Last updated at 23:00</p>
 </div>
 
-<div class="closures">
+<div class="firstdiv">
+<!-- <h2 class="launch">No current closures</h2> -->
+
+<!-- <details>
+<summary class="dropdown-hover">Road Closure (Pad -> Production)</summary>
+<pre>
+<b>DATE</b> - m d, xx:xx-xx:xx
+<b>PURPOSE</b> - 
+</pre>
+</details> -->
+
 <details>
 <summary class="dropdown-hover">Road Closure (Pad -> Production)</summary>
 <pre>
 <b>DATE</b> - September 12th, 01:00-05:00
-<b>REASON</b> - Ship 42 returns to Megabay 2 for engine installation after catch testing at the pad.
+<b>PURPOSE</b> - <span class="ship">Ship 42</span> returns to Megabay 2 for engine installation after catch testing at the pad.
 </pre>
 </details>
 
 <details>
-<summary class="dropdown-hover">Road Closure (Masseys -> Production)</summary>
+<summary class="dropdown-hover">Road Closure (Massey's -> Production)</summary>
 <pre>
 <b>DATE</b> - September 12th, 01:00-05:00
-<b>REASON</b> - Booster 22 returns to Megabay 1 for engine installation following cryogenic proofing.
+<b>PURPOSE</b> - <span class="booster">Booster 22</span> returns to Megabay 1 for engine installation following cryogenic proofing.
 </pre>
 </details>
 </div>
 
-<div class="launches">
+<div>
 <h2 class="launch">FLIGHT 14</h2>
 <pre>
 <span class="booster">Booster 21</span> and <span class="ship">Ship 41</span> will fly on Flight 14.
@@ -42,11 +52,20 @@ Flight 14 will be Starship's first orbital flight and will deploy the first oper
 <b>LAUNCH DATES:</b>
 September 18th, 07:15-09:14
 September 19th, 07:15-09:14
-<span class="source">Source: <a href="https://www.fly.faa.gov/adv/adv_spt" target="_blank">FAA</a></span>
+<span class="source">Source: <a href="https://www.fly.faa.gov/adv/adv_spt" target="_blank" class="a-source">FAA</a></span>
 </pre>
 </div>
 
-<div class="vehicles">
+<div>
+<details>
+<summary class="dropdown-hover ship ship-hover">SHIP 40 (Flight 13)</summary>
+<pre>
+Currently near the Cape of Good Hope
+
+Ship 40 was expended on Flight 13, splashing down in the Indian Ocean. However, it landed soft enough to survive, and is now being transported to Starbase onboard <a href="https://www.marinetraffic.com/en/ais/details/ships/shipid:255286" target="_blank">FORTE</a> with a current ETA of October 8th.
+</pre>
+</details>
+
 <h2 class="booster">BOOSTER 21 (Flight 14)</h2>
 <pre>
 Currently in Megabay 1
@@ -70,7 +89,7 @@ Completed full-duration static fire (Aug 20)</span>
 
 <h2 class="booster">BOOSTER 22 (Flight 15)</h2>
 <pre>
-Currently at Masseys
+Currently at Massey's
 
 <span class="complete">Completed cryogenic proofing (Sep 9)</span>
 <span class="incomplete">Engines installed</span>
@@ -82,13 +101,44 @@ At launch site</span>
 <pre>
 Currently at Pad 2
 
-<span class="complete">Completed cryogenic proofing (Sep 3)</span>
-<span class="in-progress">Catch testing</span>
+<span class="complete">Completed cryogenic proofing (Sep 3)
+Completed catch testing (Sep 11)</span>
 <span class="incomplete">Engines installed
 Full-length static fire
 At launch site</span>
 </pre>
 </div>
 
+<div>
+<details>
+<summary class="dropdown-hover">FLIGHT 13</summary>
+<pre>
+<span class="in-progress">Booster 20</span> and <span class="in-progress">Ship 40</span> flew on Flight 13 on July 24th, 2026.
+
+Flight 13 was the second test of Starship V3. Booster 20 successfully completed most of its boostback burn but failed to relight all 13 engines for its landing burn, resulting in a hard splashdown. Ship 40 successfully deployed real Starlink V3 satellites for the first time, relit an engine in space, and splashed down in the Indian Ocean soft enough to remain in one piece.
+</pre>
+</details>
+
+<details>
+<summary class="dropdown-hover">FLIGHT 12</summary>
+<pre>
+<span class="in-progress">Booster 19</span> and <span class="in-progress">Ship 39</span> flew on Flight 12 on May 22nd, 2026.
+
+Flight 12 was the first test flight of Starship V3. One Raptor-3 engine flamed out on ascent, and Booster 19 was unable to perform its boostback burn. One of Ship 39's MVAC engines flamed out on ascent, but despite that the rest of the flight was successful, deploying dummy Starlink V3 satellites before splashing down in the Indian Ocean.
+</pre>
+</details>
+</div>
+
+<script>
+document.querySelectorAll('details').forEach(function(details) {
+  details.addEventListener('toggle', function() {
+    if (details.open) {
+      details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+});
+</script>
+<p style="text-align: center;" class="source"><span class="incomplete">Incomplete (Failed)</span>, <span class="in-progress">In-Progress (Expended)</span>, <span class="complete">Complete (Landed)</span>, <span style="color: rgb(235, 188, 18);">Uncertain</span></p>
+<p style="text-align: center; padding-bottom: 5px" class="source">This website is not approved by or associated with SpaceX or Starbase.</p>
 </body>
 </html>
