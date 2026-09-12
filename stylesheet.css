@@ -22,6 +22,12 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
 .h-wrapper p {
     font-size: clamp(5px, 2vw, 10px);
     color: rgb(75, 75, 75);
@@ -31,6 +37,13 @@ h1 {
     left: 15px;
     right: 0;
     margin: 0;
+    width: fit-content;
+}
+
+.h-wrapper .right {
+    text-align: right;
+    left: auto;
+    right: 15px;
 }
 
 img {
@@ -56,18 +69,26 @@ summary {
     user-select: none; /* Standard syntax */
 }
 
+.beach-closure {
+    color: #d73cbd;
+}
+
+.beach-closure:hover {
+    color: #f063d8;
+}
+
 summary:hover {
     color: #b974f5;
     transition: 0.1s;
 }
 
 .ship-hover:hover {
-    color: #f8a745;
+    color: #eba652;
     transition: 0.1s;
 }
 
 .booster-hover:hover {
-    color: #2b8ef1;
+    color: #3e98f2;
     transition: 0.1s;
 }
 
@@ -80,6 +101,10 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     padding-left: 1em;
+}
+
+b {
+    font-weight: 600;
 }
 
 .h-wrapper {
@@ -113,17 +138,18 @@ div {
     padding: 0 20px;
 }
 
-div h2 {
+div h3 {
+    font-size: 24px;
     margin-top: 15px;
     margin-bottom: 0;
 }
 
 .booster {
-    color: #0d77e1;
+    color: #1b82e8;
 }
 
 .ship {
-    color: #ea8d1b;
+    color: #e49330;
 }
 
 .launch {
@@ -147,12 +173,17 @@ a {
     text-decoration-color: rgb(75, 75, 75);
 }
 
+.a-none {
+    color: auto;
+    text-decoration-color: auto;
+}
+
 .complete {
     color: lightgreen;
 }
 
 .in-progress {
-    color: rgb(251, 163, 75);
+    color: rgb(249, 170, 91);
 }
 
 .incomplete {
@@ -162,4 +193,26 @@ a {
 .uncertain {
     color: rgb(235, 188, 18);
     font-style: italic;
+}
+
+.retired {
+    color: rgb(155, 155, 155);
+}
+
+.booster-s {
+    color: rgb(54, 184, 228);
+}
+
+.ship-s {
+    color: rgb(237, 162, 101);
+}
+
+.booster-launch-p {
+    font-weight: 500;
+    color: rgb(192, 233, 248);
+}
+
+.ship-launch-p {
+    font-weight: 500;
+    color: rgb(248, 214, 192)
 }

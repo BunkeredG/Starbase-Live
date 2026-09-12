@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Starbase Map</title>
+<title>Starbase Live</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="stylesheet.css">
@@ -11,14 +11,23 @@
 <div class="h-wrapper">
     <img src="img/prod-masseys pad-prod.png" class="headerimg">
     <h1>Starbase</h1>
-    <p>All times in Central Time <br> Last updated at 14:00</p>
+    <p>All times in Central Time <br> Last updated at 17:20</p>
+    <p class="right"><a href="past-vehicles.html" style="font-size: 15px;">Past Vehicles -></a></p>
 </div>
 
 <div class="firstdiv">
-<!-- <h2 class="launch">No current closures</h2> -->
+<!-- <h3 class="launch">No current closures</h3> -->
 
 <!-- <details>
 <summary class="dropdown-hover">Road Closure (Pad -> Production)</summary>
+<pre>
+<b>DATE</b> - m d, xx:xx-xx:xx
+<b>PURPOSE</b> - 
+</pre>
+</details> -->
+
+<!-- <details>
+<summary class="dropdown-hover beach-closure">Beach Closure</summary>
 <pre>
 <b>DATE</b> - m d, xx:xx-xx:xx
 <b>PURPOSE</b> - 
@@ -29,7 +38,7 @@
 <summary class="dropdown-hover">Road Closure (Pad -> Production)</summary>
 <pre>
 <b>DATE</b> - September 12th, 22:00-02:00
-<b>PURPOSE</b> - <span class="ship">Ship 42</span> returns to Megabay 2 after testing at the pad.
+<b>PURPOSE</b> - <span class="ship">Ship 42</span> returns to Megabay 2 after testing at Pad 2.
 </pre>
 </details>
 
@@ -42,7 +51,7 @@
 </div>
 
 <div>
-<h2 class="launch">FLIGHT 14</h2>
+<h3 class="launch">FLIGHT 14</h3>
 <pre>
 <span class="booster">Booster 21</span> and <span class="ship">Ship 41</span> will fly on Flight 14.
 
@@ -56,18 +65,22 @@ September 19th, 07:15-09:14
 </div>
 
 <div>
+<h2>Active Vehicles</h2>
+
 <details>
-<summary class="dropdown-hover ship ship-hover">SHIP 40 (Flight 13)</summary>
+<summary class="dropdown-hover ship ship-hover">Ship 40</summary>
 <pre>
 Currently near the Cape of Good Hope
+Flew on Flight 13
 
 Ship 40 was expended on Flight 13, splashing down in the Indian Ocean. However, it landed soft enough to survive, and is now being transported to Starbase onboard <a href="https://www.marinetraffic.com/en/ais/details/ships/shipid:255286" target="_blank">FORTE</a> with a current ETA of October 8th.
 </pre>
 </details>
 
-<h2 class="booster">BOOSTER 21 (Flight 14)</h2>
+<h3 class="booster">Booster 21</h3>
 <pre>
 Currently in Megabay 1
+Will fly on Flight 14
 
 <span class="complete">Completed cryogenic proofing (Jul 18-19)
 Engines installed
@@ -75,9 +88,10 @@ Completed full-duration static fire (Aug 28, 15s)</span>
 <span class="incomplete">At launch site</span>
 </pre>
 
-<h2 class="ship">SHIP 41 (Flight 14)</h2>
+<h3 class="ship">Ship 41</h3>
 <pre>
 Currently in Megabay 2
+Will fly on Flight 14
 
 <span class="complete">Completed cryogenic proofing (Jun 29-30)
 Engines installed
@@ -86,9 +100,10 @@ Completed full-duration static fire (Aug 20)</span>
 <span class="incomplete">At launch site</span>
 </pre>
 
-<h2 class="booster">BOOSTER 22 (Flight 15)</h2>
+<h3 class="booster">Booster 22</h3>
 <pre>
 Currently in Megabay 1
+Expected to fly on Flight 15
 
 <span class="complete">Completed cryogenic proofing (Sep 9)</span>
 <span class="in-progress">Installing engines</span>
@@ -96,9 +111,10 @@ Currently in Megabay 1
 At launch site</span>
 </pre>
 
-<h2 class="ship">SHIP 42 (Flight 15)</h2>
+<h3 class="ship">Ship 42</h3>
 <pre>
 Currently at Pad 2
+Expected to fly on Flight 15
 
 <span class="complete">Completed cryogenic proofing (Sep 3)
 Completed ambient pressure test</span>
@@ -110,24 +126,28 @@ At launch site</span>
 </div>
 
 <div>
+<h2>Previous Starship V3 Flights</h2>
 <details>
 <summary class="dropdown-hover">FLIGHT 13</summary>
 <pre>
-<span class="in-progress">Booster 20</span> and <span class="in-progress">Ship 40</span> flew on Flight 13 on July 24th, 2026.
+<a class="a-none" href="past-vehicles.html#booster-20"><span class="incomplete">Booster 20</span></a> and <span class="complete">Ship 40</span> flew on Flight 13 on July 24th, 2026.
 
-Flight 13 was the second test of Starship V3. Booster 20 successfully completed most of its boostback burn but failed to relight all 13 engines for its landing burn, resulting in a hard splashdown. Ship 40 successfully deployed real Starlink V3 satellites for the first time, relit an engine in space, and splashed down in the Indian Ocean soft enough to remain in one piece.
+Flight 13 was the second test of Starship V3. Booster 20 completed its boostback burn but failed to relight all 13 engines for its landing burn, resulting in a hard splashdown. Ship 40 successfully deployed real Starlink V3 satellites for the first time, relit an engine in space, and splashed down in the Indian Ocean soft enough to remain in one piece.
 </pre>
 </details>
 
 <details>
 <summary class="dropdown-hover">FLIGHT 12</summary>
 <pre>
-<span class="in-progress">Booster 19</span> and <span class="in-progress">Ship 39</span> flew on Flight 12 on May 22nd, 2026.
+<a class="a-none" href="past-vehicles.html#booster-19"><span class="incomplete">Booster 19</span></a> and <a class="a-none" href="past-vehicles.html#ship-39"><span class="in-progress">Ship 39</span></a> flew on Flight 12 on May 22nd, 2026.
 
-Flight 12 was the first test flight of Starship V3. One Raptor-3 engine flamed out on ascent, and Booster 19 was unable to perform its boostback burn. One of Ship 39's MVAC engines flamed out on ascent, but despite that the rest of the flight was successful, deploying dummy Starlink V3 satellites before splashing down in the Indian Ocean.
+Flight 12 was the first test flight of Starship V3. One Raptor 3 engine flamed out on ascent and, after stage separation, Booster 19 was unable to perform its boostback burn. One of Ship 39's RVAC engines flamed out on ascent, but despite that the rest of the flight was successful, deploying dummy Starlink V3 satellites before splashing down in the Indian Ocean.
 </pre>
 </details>
 </div>
+
+<p style="text-align: center;" class="source"><span class="incomplete">Incomplete (Destroyed)</span>, <span class="in-progress">In-Progress (Expended)</span>, <span class="complete">Complete (Landed)</span>, <span style="color: rgb(235, 188, 18);">Uncertain</span></p>
+<p style="text-align: center; padding-bottom: 5px" class="source">This website is not approved by or associated with SpaceX or Starbase.</p>
 
 <script>
 document.querySelectorAll('details').forEach(function(details) {
@@ -138,7 +158,5 @@ document.querySelectorAll('details').forEach(function(details) {
   });
 });
 </script>
-<p style="text-align: center;" class="source"><span class="incomplete">Incomplete (Failed)</span>, <span class="in-progress">In-Progress (Expended)</span>, <span class="complete">Complete (Landed)</span>, <span style="color: rgb(235, 188, 18);">Uncertain</span></p>
-<p style="text-align: center; padding-bottom: 5px" class="source">This website is not approved by or associated with SpaceX or Starbase.</p>
 </body>
 </html>
