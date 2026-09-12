@@ -40,6 +40,10 @@ h2 {
     width: fit-content;
 }
 
+.a-wrapper {
+    font-size: clamp(10px, 2vw, 15px);
+}
+
 .h-wrapper .right {
     text-align: right;
     left: auto;
