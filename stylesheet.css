@@ -17,10 +17,12 @@ h1 {
     position: absolute;
     z-index: 10;
     top: 5px;
-    left: 0px;
-    right: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
     margin: 0;
 }
+
 
 h2 {
     font-size: 40px;
@@ -42,6 +44,7 @@ h2 {
 
 .a-wrapper {
     font-size: clamp(10px, 2vw, 15px);
+    text-decoration: none;
 }
 
 .h-wrapper .right {
@@ -219,4 +222,23 @@ a {
 .ship-launch-p {
     font-weight: 500;
     color: rgb(248, 214, 192)
+}
+
+.expand {
+    scale: 1;
+    transition: 0.3s;
+}
+
+.expand:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.a-expand {
+    color: lightgray;
+    transition: 0.3s;
+}
+
+.a-expand:hover {
+    color: white;
 }
