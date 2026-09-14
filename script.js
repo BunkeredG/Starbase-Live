@@ -1,6 +1,3 @@
-const currentID = "ld:2223-0715-0914,rc:0";
-const bodyMessage = "test notification";
-
 // Scroll when opening <details>
 document.querySelectorAll('details').forEach(function(details) {
   details.addEventListener('toggle', function() {
@@ -41,22 +38,30 @@ if (permsButton) {
         } else {
             Notification.requestPermission().then(permission => {
                 if (permission === 'granted') {
-                    localStorage.setItem('subscribed', 'true');
-                    localStorage.setItem('lastSeenUpdate', currentID);
-                    new Notification('Subscribed!', {body: "Leave this site open to get updates as soon as they're published"});
-                    permsButton.textContent = "Stop Receiving Updates";
+                    fetch('update.json', {cache: 'no-store'}).then(response => response.json()).then(data => {
+                        localStorage.setItem('subscribed', 'true');
+                        localStorage.setItem('lastSeenUpdate', data.id);
+                        new Notification('Subscribed!', {body: "Leave this site open to get updates as soon as they're published"});
+                        permsButton.textContent = "Stop Receiving Updates";
+                    });
                 }
             });
         }
     });
 }
 
-// Notification push
-const lastSeenID = localStorage.getItem('lastSeenUpdate');
+// Check for notification update
+function checkForUpdate() {
+    fetch('update.json', {cache: 'no-store'}).then(response => response.json()).then(data => {
+        const lastSeenID = localStorage.getItem('lastSeenUpdate');
 
-if (lastSeenID !== currentID && localStorage.getItem('subscribed') === 'true') {
-    if (Notification.permission === 'granted') {
-        new Notification('Starbase Update', {body: bodyMessage});
-    }
-    localStorage.setItem('lastSeenUpdate', currentID);
+        if (lastSeenID !== data.id) {
+            if (lastSeenID && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
+                new Notification('Starbase Live', {body: data.message});
+            }
+            localStorage.setItem('lastSeenUpdate', data.id);
+        }
+    });
 }
+checkForUpdate();
+setInterval(checkForUpdate, 10000);
