@@ -64,4 +64,4 @@ function checkForUpdate() {
     });
 }
 checkForUpdate();
-setInterval(checkForUpdate, 10000);
+setInterval(checkForUpdate, 60000);
