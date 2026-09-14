@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Starbase Live</title>
+<title>Starbase Updates</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="stylesheet.css">
@@ -11,8 +11,8 @@
 <div class="h-wrapper">
     <img src="img/none.png" class="headerimg">
     <h1>Starbase</h1>
-    <p>All times in Central Time <br> Last updated at 10:00</p>
-    <p class="right expand"><a href="past-vehicles.html" class="a-wrapper a-expand">Retired Vehicles -></a></p>
+    <p>All times in Central Time <br> Last updated at 17:20</p>
+    <p class="right expand"><a href="past-vehicles.html" class="a-wrapper a-expand">Past Vehicles -></a></p>
 </div>
 
 <div class="firstdiv">
@@ -111,6 +111,17 @@ At launch site</span>
 </div>
 
 <div>
+<h2>Stands</h2>
+<pre>
+<b class="booster">Booster Cryo</b> - Massey's (Sep 13)
+<b class="booster">Booster Transport</b> - <span class="uncertain">Sanchez</span>
+<b class="ship">Ship Cryo</b> - <span class="uncertain">Sanchez</span>
+<b class="ship">Ship Transport</b> - Sanchez (Sep 12)
+<b class="ship">Ship Static Fire</b> - Massey's (Sep 13)
+</pre>
+</div>
+
+<div>
 <h2>Previous Starship V3 Flights</h2>
 <details>
 <summary class="dropdown-hover">FLIGHT 13</summary>
@@ -131,17 +142,10 @@ Flight 12 was the first test flight of Starship V3. One Raptor 3 engine flamed o
 </details>
 </div>
 
-<p style="text-align: center;" class="source"><span class="incomplete">Incomplete (Destroyed)</span>, <span class="in-progress">In-Progress (Expended)</span>, <span class="complete">Complete (Landed)</span>, <span style="color: rgb(235, 188, 18);">Uncertain</span></p>
-<p style="text-align: center; padding-bottom: 5px" class="source">This website is not approved by or associated with SpaceX or Starbase.</p>
+<button class="f-button" id="permissions">Get Updates</button>
+<p class="footer source"><span class="incomplete">Incomplete (Destroyed)</span>, <span class="in-progress">In-Progress (Expended)</span>, <span class="complete">Complete (Landed)</span>, <span style="color: rgb(235, 188, 18);">Uncertain</span></p>
+<p style="padding-bottom: 5px" class="footer source">This website is not approved by or associated with SpaceX or Starbase.</p>
 
-<script>
-document.querySelectorAll('details').forEach(function(details) {
-  details.addEventListener('toggle', function() {
-    if (details.open) {
-      details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  });
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>

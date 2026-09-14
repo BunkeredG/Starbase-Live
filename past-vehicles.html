@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Starbase Live - Past Vehicles</title>
+<title>Starbase Updates - Past Vehicles</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="stylesheet.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <img src="img/past-vehicles.png" class="headerimg">
     <h1>Vehicles</h1>
     <a href="https://twitter.com/SpaceX/status/2080302195677728803" target="_blank"><p class="right">Image Credit: SpaceX ↗</p></a>
-    <p class="expand"><a href="index.html" class="a-wrapper a-expand"><- Starbase Live</a></p>
+    <p class="expand"><a href="index.html" class="a-wrapper a-expand"><- Updates</a></p>
 </div>
 
 <div class="firstdiv">
@@ -149,29 +149,7 @@ Completed spin prime (August 13th, 2025)
 
 <p style="text-align: center; margin-top: 20px; padding-bottom: 5px" class="source">This website is not approved by or associated with SpaceX or Starbase.</p>
 
-<script>
-document.querySelectorAll('details').forEach(function(details) {
-  details.addEventListener('toggle', function() {
-    if (details.open) {
-      details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  });
-});
-
-function openDetailsFromHash() {
-    const hash = window.location.hash;
-    if (!hash) return;
-
-    const target = document.querySelector(hash);
-    if (target && target.tagName === 'DETAILS') {
-        target.open = true;
-        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-}
-
-window.addEventListener('DOMContentLoaded', openDetailsFromHash);
-window.addEventListener('hashchange', openDetailsFromHash);
-</script>
+<script src="script.js"></script>
 </body>
 
 </html>
