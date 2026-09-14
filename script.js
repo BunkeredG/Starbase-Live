@@ -1,4 +1,4 @@
-const currentID = "ld:2223-0715-0914,rc:5";
+const currentID = "ld:2223-0715-0914,rc:0";
 const bodyMessage = "test notification";
 
 // Scroll when opening <details>
@@ -42,6 +42,7 @@ if (permsButton) {
             Notification.requestPermission().then(permission => {
                 if (permission === 'granted') {
                     localStorage.setItem('subscribed', 'true');
+                    localStorage.setItem('lastSeenUpdate', currentID);
                     new Notification('Subscribed!', {body: "Leave this site open to get updates as soon as they're published"});
                     permsButton.textContent = "Stop Receiving Updates";
                 }
