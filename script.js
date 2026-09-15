@@ -87,7 +87,6 @@ function updateCountdown() {
         if (localStorage.getItem('closeNotify-' + notifyKey) !== 'true' && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
             new Notification('Starbase Updates', {body: "Launch window is closed"});
             localStorage.setItem('closeNotify-' + notifyKey, 'true');
-            localStorage.setItem('openNotify-' + notifyKey, 'false');
         }
 
         clearInterval(timer);
@@ -95,22 +94,43 @@ function updateCountdown() {
     }
 
     if (openDiff < 0) {
-        document.getElementById('launchTimer').textContent = "(Window Open)";
-
         if (localStorage.getItem('openNotify-' + notifyKey) !== 'true' && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
             new Notification('Starbase Updates', {body: "Launch window is open!"});
             localStorage.setItem('openNotify-' + notifyKey, 'true');
         }
-
-        return;
     }
 
-    const days = String(Math.floor(openDiff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-    const hours = String(Math.floor((openDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-    const minutes = String(Math.floor((openDiff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-    const seconds = String(Math.floor((openDiff % (1000 * 60)) / 1000)).padStart(2, '0');
+    if (openDiff - (1000 * 60 * 10) < 0) {
+        if (localStorage.getItem('10minNotify-' + notifyKey) !== 'true' && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
+            new Notification('Starbase Updates', {body: "Launch window opens in 10 minutes!"});
+            localStorage.setItem('10minNotify-' + notifyKey, 'true');
+        }
+    }
 
-    document.getElementById('launchTimer').textContent = `(${days}:${hours}:${minutes}:${seconds})`;
+    if (openDiff - (1000 * 60 * 60) < 0) {
+        if (localStorage.getItem('1hrNotify-' + notifyKey) !== 'true' && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
+            new Notification('Starbase Updates', {body: "Launch window opens in 1 hour!"});
+            localStorage.setItem('1hrNotify-' + notifyKey, 'true');
+        }
+    }
+
+    let diff;
+    let preM;
+
+    if (openDiff >= 0) {
+        diff = openDiff;
+        preM = "";
+    } else {
+        diff = closeDiff;
+        preM = "Window Open for ";
+    }
+
+    const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    const hours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+    document.getElementById('launchTimer').textContent = `(${preM}${days}:${hours}:${minutes}:${seconds})`;
 }
 
 updateCountdown();
