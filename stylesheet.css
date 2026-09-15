@@ -1,33 +1,45 @@
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    font-family: 'Inter';
 }
 
 body {
     background-color: black;
     color: white;
-    font-family: 'Inter';
     margin: 0;
 }
 
 h1 {
     text-align: center;
+    color: white;
     font-weight: 900;
     font-size: clamp(28px, 8vw, 70px);
     position: absolute;
     z-index: 10;
     top: 5px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
+    transition: transform 0.3s;
     width: fit-content;
     margin: 0;
 }
 
+h1:hover {
+    transform: translateX(-50%) scale(1.2);
+    cursor: pointer;
+}
 
 h2 {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 0;
 }
 
 .h-wrapper p {
@@ -71,10 +83,17 @@ details {
 summary {
     font-weight: 600;
     font-size: 25px;
+    width: fit-content;
     color: #994cde;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+    transition: 0.5s;
+    scale: 1;
+}
+
+summary:hover {
+    scale: 1.05;
 }
 
 .beach-closure {
@@ -87,17 +106,14 @@ summary {
 
 summary:hover {
     color: #b974f5;
-    transition: 0.1s;
 }
 
 .ship-hover:hover {
     color: #eba652;
-    transition: 0.1s;
 }
 
 .booster-hover:hover {
     color: #3e98f2;
-    transition: 0.1s;
 }
 
 pre {
@@ -146,12 +162,6 @@ div {
     padding: 0 20px;
 }
 
-div h3 {
-    font-size: 24px;
-    margin-top: 15px;
-    margin-bottom: 0;
-}
-
 .f-button {
     margin: auto;
     margin-top: 10px;
@@ -174,7 +184,9 @@ div h3 {
 }
 
 .footer {
+    margin-top: 15px;
     text-align: center;
+    padding-bottom: 5px;
 }
 
 .booster {
@@ -189,7 +201,7 @@ div h3 {
     color: #994cde;
 }
 
-.source {
+.p-small {
     color: rgb(75, 75, 75);
     font-size: 10px;
     margin: 0;
@@ -209,6 +221,17 @@ a {
 .a-none {
     color: auto;
     text-decoration-color: auto;
+}
+
+.grow-link {
+    scale: 1;
+    color: auto;
+    transition: 0.3s;
+}
+
+.grow-link:hover {
+    scale: 1.05;
+    color: rgb(80, 147, 235);
 }
 
 .complete {
@@ -250,21 +273,21 @@ a {
     color: rgb(248, 214, 192)
 }
 
-.expand {
+.expand11 {
     scale: 1;
     transition: 0.3s;
 }
 
-.expand:hover {
+.expand11:hover {
     cursor: pointer;
     scale: 1.1;
 }
 
-.a-expand {
+.a-whiten {
     color: lightgray;
     transition: 0.3s;
 }
 
-.a-expand:hover {
+.a-whiten:hover {
     color: white;
 }

@@ -56,8 +56,8 @@ function checkForUpdate() {
         const lastSeenID = localStorage.getItem('lastSeenUpdate');
 
         if (lastSeenID !== data.id) {
-            if (lastSeenID && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
-                new Notification('Starbase Live', {body: data.message});
+            if (localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
+                new Notification('Starbase Updates', {body: data.message});
             }
             localStorage.setItem('lastSeenUpdate', data.id);
         }
@@ -65,3 +65,53 @@ function checkForUpdate() {
 }
 checkForUpdate();
 setInterval(checkForUpdate, 60000);
+
+// Countdown to launch
+const windowOpen = new Date("2026-09-22T07:15:00-05:00");
+const windowClose = new Date("2026-09-22T09:14:00-05:00");
+const notifyKey = windowOpen.toISOString();
+
+function updateCountdown() {
+    const now = new Date();
+    const openDiff = windowOpen - now;
+    const closeDiff = windowClose - now;
+
+    if (localStorage.getItem('closeNotify-' + notifyKey) === 'true') {
+        clearInterval(timer);
+        return;
+    }
+
+    if (closeDiff < 0) {
+        document.getElementById('launchTimer').textContent = "(Window Closed)";
+        
+        if (localStorage.getItem('closeNotify-' + notifyKey) !== 'true' && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
+            new Notification('Starbase Updates', {body: "Launch window is closed"});
+            localStorage.setItem('closeNotify-' + notifyKey, 'true');
+            localStorage.setItem('openNotify-' + notifyKey, 'false');
+        }
+
+        clearInterval(timer);
+        return;
+    }
+
+    if (openDiff < 0) {
+        document.getElementById('launchTimer').textContent = "(Window Open)";
+
+        if (localStorage.getItem('openNotify-' + notifyKey) !== 'true' && localStorage.getItem('subscribed') === 'true' && Notification.permission === 'granted') {
+            new Notification('Starbase Updates', {body: "Launch window is open!"});
+            localStorage.setItem('openNotify-' + notifyKey, 'true');
+        }
+
+        return;
+    }
+
+    const days = String(Math.floor(openDiff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    const hours = String(Math.floor((openDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    const minutes = String(Math.floor((openDiff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const seconds = String(Math.floor((openDiff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+    document.getElementById('launchTimer').textContent = `(${days}:${hours}:${minutes}:${seconds})`;
+}
+
+updateCountdown();
+const timer = setInterval(updateCountdown, 1000);
