@@ -251,6 +251,11 @@ a {
     font-style: italic;
 }
 
+.if-necessary {
+    color: rgb(160, 23, 107);
+    font-style: italic;
+}
+
 .retired {
     color: rgb(155, 155, 155);
 }
